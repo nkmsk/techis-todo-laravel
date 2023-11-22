@@ -2,13 +2,14 @@
 
 @section('content')
 
-<!-- タスク登録用パネル -->
+<!-- タスク登録用パネル… -->
 <div class="panel-body">
     <!-- バリデーションエラーの表示 -->
     @include('common.errors')
 
     <!-- 新タスクフォーム -->
-    <form action="{{ url('task') }}" method="POST" class="form-horizontal">{{ csrf_field() }}
+    <form action="{{ url('task') }}" method="POST" class="form-horizontal">
+        {{ csrf_field() }}
 
         <!-- タスク名 -->
         <div class="form-group">
@@ -17,14 +18,14 @@
             <div class="col-sm-6">
                 <input type="text" name="name" id="task-name" class="form-control">
             </div>
+        </div>
 
-            <!-- タスク追加ボタン -->
-            <div class="form-group">
-                <div class="col-sm-offset-3 col-sm-6">
-                    <button type="submit" class="btn btn-default">
-                        <i class="fa fa-plus"></i> Add Task
-                    </button>
-                </div>
+        <!-- タスク追加ボタン -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button type="submit" class="btn btn-default">
+                    <i class="fa fa-plus"></i> Add Task
+                </button>
             </div>
         </div>
     </form>
@@ -46,7 +47,7 @@
                 <th>&nbsp;</th>
             </thead>
 
-        <!-- テーブル本体 -->
+            <!-- テーブル本体 -->
             <tbody>
                 @foreach ($tasks as $task)
                 <tr>
